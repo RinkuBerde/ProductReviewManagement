@@ -25,6 +25,14 @@ namespace ProductReviewManagement
 
             Print(query);
         }
-    
+        //UC-03----> gets products with id 1,4,9 whose rating is greater then 3
+        public static  void RatingAboveThree(List<ProductReview> productReviews)
+        {
+            var query = from products in productReviews
+                        where (products.ProductID == 1 || products.ProductID == 4 || products.ProductID == 9) && products.Rating >= 3
+                        select products;
+            Print(query);
+        }
+
     }
 }

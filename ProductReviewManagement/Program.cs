@@ -37,6 +37,7 @@
 
             Console.WriteLine("Press 1: for Adding a Prodcut Review In list");
             Console.WriteLine("Press 2: for Retrieve top 3 records from the list");
+            Console.WriteLine("Press 3: for gets products with id 1,4,9 whose rating is greater then 3");
             Console.WriteLine("Enter Option");
             int option = Convert.ToInt32(Console.ReadLine());
             //Creating a list for Product Review
@@ -49,7 +50,9 @@
                 case 2:
                     Management.GetTopThree(list);
                     break;
-
+                case 3:
+                    Management.RatingAboveThree(list); 
+                    break;
             }
         }
     }   
