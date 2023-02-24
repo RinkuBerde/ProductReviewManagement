@@ -34,10 +34,22 @@
                 new ProductReview(){ProductID = 24, UserID = 9, Rating =4, Review ="Average", isLike = true },
                 new ProductReview(){ProductID = 25, UserID = 10, Rating =2, Review ="Bad", isLike = false },
             };
-           // Display the details in list
-            foreach (var item in list)
+
+            Console.WriteLine("Press 1: for Adding a Prodcut Review In list");
+            Console.WriteLine("Press 2: for Retrieve top 3 records from the list");
+            Console.WriteLine("Enter Option");
+            int option = Convert.ToInt32(Console.ReadLine());
+            //Creating a list for Product Review
+            List<ProductReview> productReviews = new List<ProductReview>();
+            switch (option)
             {
-                Console.WriteLine($"Product ID: {item.ProductID}, User ID: {item.UserID}, Rating: {item.Rating}, Review: {item.Review}, Like: {item.isLike}");
+                case 1:
+                    Management.Print(list);
+                    break;
+                case 2:
+                    Management.GetTopThree(list);
+                    break;
+
             }
         }
     }   
