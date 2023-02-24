@@ -53,26 +53,26 @@ namespace ProductReviewManagement
             dataTable.Rows.Add(3, 3, 1, "Bad", false);
             dataTable.Rows.Add(4, 4, 5, "Good", true);
             dataTable.Rows.Add(5, 5, 0, "Bad", false);
-            dataTable.Rows.Add(6, 6, 7, "Good", true);
+            dataTable.Rows.Add(6, 10, 7, "Good", true);
             dataTable.Rows.Add(7, 7, 10, "Best", true);
             dataTable.Rows.Add(8, 8, 9, "Best", true);
             dataTable.Rows.Add(9, 9, 8, "Best", true);
             dataTable.Rows.Add(10, 10, 2, "Bad", false);
             dataTable.Rows.Add(11, 11, 5, "Good", true);
-            dataTable.Rows.Add(12, 12, 9, "Best", true);
+            dataTable.Rows.Add(12, 10, 9, "Best", true);
             dataTable.Rows.Add(13, 13, 1, "Bad", false);
             dataTable.Rows.Add(14, 14, 8, "Best", true);
-            dataTable.Rows.Add(15, 15, 3, "Bad", false);
+            dataTable.Rows.Add(15, 10, 3, "Bad", false);
             dataTable.Rows.Add(16, 16, 7, "Good", true);
             dataTable.Rows.Add(17, 17, 4, "Good", true);
-            dataTable.Rows.Add(18, 18, 2, "Bad", false);
+            dataTable.Rows.Add(18, 10, 2, "Bad", false);
             dataTable.Rows.Add(19, 19, 3, "Bad", false);
-            dataTable.Rows.Add(20, 19, 1, "Bad", false);
-            dataTable.Rows.Add(21, 19, 10, "Best", true);
+            dataTable.Rows.Add(20, 10, 1, "Bad", false);
+            dataTable.Rows.Add(21, 10, 10, "Best", true);
             dataTable.Rows.Add(22, 19, 7, "Good", true);
-            dataTable.Rows.Add(23, 19, 8, "Best", true);
+            dataTable.Rows.Add(23, 10, 8, "Best", true);
             dataTable.Rows.Add(24, 19, 4, "Good", true);
-            dataTable.Rows.Add(25, 19, 2, "Bad", false);
+            dataTable.Rows.Add(25, 10, 2, "Bad", false);
 
             Console.WriteLine("Press 1: for Adding a Prodcut Review In list");
             Console.WriteLine("Press 2: for Retrieve top 3 records from the list");
@@ -85,6 +85,7 @@ namespace ProductReviewManagement
             Console.WriteLine("Press 9 :for print only rows whose like is true");
             Console.WriteLine("Press 10:for Find average rating of the each productId");
             Console.WriteLine("Press 11:for Retreive all records from the list who’s review message contain Best");
+            Console.WriteLine("Press 12:for Retreive all records from the list who’s Userid =10");
             Console.WriteLine("Enter Option");
             int option = Convert.ToInt32(Console.ReadLine());
             //Creating a list for Product Review
@@ -126,6 +127,10 @@ namespace ProductReviewManagement
                 case 11:
                     Management management1 = new Management();
                     management1.ReviewIsBest(dataTable);
+                    break;
+                case 12:
+                    Management managementId = new Management();
+                    managementId.UserID(dataTable);
                     break;
             }
         }
