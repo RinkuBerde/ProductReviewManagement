@@ -102,7 +102,8 @@ namespace ProductReviewManagement
             {
                 Console.WriteLine(item.Item1 + " " + item.Item2 + " " + item.Item3 + " " + item.Item4 + " " + item.Item5);
             }
-        }      
+        } 
+        
         //UC-09------> method to print rows whose isLike is true
         public  void PrintTrueTable(DataTable dataTable)
         {
