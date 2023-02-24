@@ -60,5 +60,14 @@ namespace ProductReviewManagement
                 Console.WriteLine($"Product ID: {item.ProductID} Review: {item.Review}");
             }
         }
+        // UC-06----> Skips top 5 records from the list
+        public static void SkipTopRecords(List<ProductReview> productReviews)
+        {
+            var query = (from products in productReviews
+                         orderby products.Rating descending
+                         select products).Skip(5);
+
+            Print(query);
+        }
     }
 }
