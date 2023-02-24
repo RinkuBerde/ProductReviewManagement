@@ -34,10 +34,11 @@
                 new ProductReview(){ProductID = 24, UserID = 9, Rating =4, Review ="Average", isLike = true },
                 new ProductReview(){ProductID = 25, UserID = 10, Rating =2, Review ="Bad", isLike = false },
             };
-
+            Console.WriteLine();
             Console.WriteLine("Press 1: for Adding a Prodcut Review In list");
             Console.WriteLine("Press 2: for Retrieve top 3 records from the list");
             Console.WriteLine("Press 3: for gets products with id 1,4,9 whose rating is greater then 3");
+            Console.WriteLine("Press 4: for Retrieve count of review present for each productID");
             Console.WriteLine("Enter Option");
             int option = Convert.ToInt32(Console.ReadLine());
             //Creating a list for Product Review
@@ -52,6 +53,9 @@
                     break;
                 case 3:
                     Management.RatingAboveThree(list); 
+                    break;
+                case 4:
+                    Management.CountByReview(list);
                     break;
             }
         }

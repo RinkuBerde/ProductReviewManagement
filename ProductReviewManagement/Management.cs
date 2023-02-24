@@ -33,6 +33,21 @@ namespace ProductReviewManagement
                         select products;
             Print(query);
         }
+        // UC-04----> groups the products by reviews
+        public static void CountByReview(List<ProductReview> productReviews)
+        {
+            var query = from products in productReviews
+                        group products by products.Review;
 
+            foreach (var item in query)
+            {
+                Console.WriteLine($"Review : {item.Key}");
+                foreach (ProductReview items in item)
+                {
+                    Console.WriteLine($"Product ID: {items.ProductID}, User ID: {items.UserID}, Rating: {items.Rating}, Review: {items.Review}, Like: {items.isLike}");
+
+                }
+            }
+        }
     }
 }
