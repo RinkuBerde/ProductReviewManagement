@@ -83,6 +83,7 @@ namespace ProductReviewManagement
             Console.WriteLine("Press 7: for  Retrive Only ProductID and Review");
             Console.WriteLine("Press 8 :for read the datatable and print its rows");
             Console.WriteLine("Press 9 :for print only rows whose like is true");
+            Console.WriteLine("Press 10:for Find average rating of the each productId");
             Console.WriteLine("Enter Option");
             int option = Convert.ToInt32(Console.ReadLine());
             //Creating a list for Product Review
@@ -116,6 +117,10 @@ namespace ProductReviewManagement
                 case 9:
                     Management management = new Management();
                     management.PrintTrueTable(dataTable);
+                    break;
+                    break;
+                case 10:
+                    Management.AverageRating(dataTable);
                     break;
             }
         }

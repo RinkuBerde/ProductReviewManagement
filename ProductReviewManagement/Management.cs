@@ -113,5 +113,12 @@ namespace ProductReviewManagement
                            product.Field<string>("Review"), product.Field<bool>("isLike"));
             PrintDataTable(products);
         }
+        //UC-10------> Find average rating of the each productId
+        public static void AverageRating(DataTable dataTable)
+        {
+            var average = (from product in dataTable.AsEnumerable()
+                           select (product.Field<int>("Rating"))).Average();
+            Console.WriteLine(average.ToString());
+        }
     }
 }
