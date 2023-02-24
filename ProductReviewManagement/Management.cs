@@ -69,5 +69,17 @@ namespace ProductReviewManagement
 
             Print(query);
         }
+        // UC-07-------> Retrive Only ProductID and Review
+        public static void GetParticular(List<ProductReview> productReviews)
+        {
+            var query = from products in productReviews
+                        select (products.ProductID, products.Review);
+
+            foreach (var item in query)
+            {
+                Console.WriteLine($"Product ID: {item.ProductID} Review: {item.Review}");
+            }
+        }
+
     }
 }
