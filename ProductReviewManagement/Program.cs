@@ -82,6 +82,7 @@ namespace ProductReviewManagement
             Console.WriteLine("Press 6: for  Skips top 5 records from the list");
             Console.WriteLine("Press 7: for  Retrive Only ProductID and Review");
             Console.WriteLine("Press 8 :for read the datatable and print its rows");
+            Console.WriteLine("Press 9 :for print only rows whose like is true");
             Console.WriteLine("Enter Option");
             int option = Convert.ToInt32(Console.ReadLine());
             //Creating a list for Product Review
@@ -111,7 +112,11 @@ namespace ProductReviewManagement
                     break;
                 case 8:
                     Management.PrintTable(dataTable);
-                    break;               
+                    break;
+                case 9:
+                    Management management = new Management();
+                    management.PrintTrueTable(dataTable);
+                    break;
             }
         }
     }

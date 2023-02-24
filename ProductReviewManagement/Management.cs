@@ -94,5 +94,23 @@ namespace ProductReviewManagement
                 Console.WriteLine(item.Item1 + " " + item.Item2 + " " + item.Item3 + " " + item.Item4 + " " + item.Item5);
             }
         }
+        // printing datatable after linq operations
+        public void PrintDataTable(EnumerableRowCollection<(int, int, int, string, bool)> products)
+        {
+            Console.WriteLine("ProductID  UserID  Rating  Review  Like");
+            foreach (var item in products)
+            {
+                Console.WriteLine(item.Item1 + " " + item.Item2 + " " + item.Item3 + " " + item.Item4 + " " + item.Item5);
+            }
+        }      
+        //UC-09------> method to print rows whose isLike is true
+        public  void PrintTrueTable(DataTable dataTable)
+        {
+            var products = from product in dataTable.AsEnumerable()
+                           where (product.Field<bool>("isLike") == true)
+                           select (product.Field<int>("ProductID"), product.Field<int>("UserID"), product.Field<int>("Rating"),
+                           product.Field<string>("Review"), product.Field<bool>("isLike"));
+            PrintDataTable(products);
+        }
     }
 }
