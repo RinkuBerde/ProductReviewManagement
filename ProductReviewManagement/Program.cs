@@ -39,6 +39,7 @@
             Console.WriteLine("Press 2: for Retrieve top 3 records from the list");
             Console.WriteLine("Press 3: for gets products with id 1,4,9 whose rating is greater then 3");
             Console.WriteLine("Press 4: for Retrieve count of review present for each productID");
+            Console.WriteLine("Press 5: for  Retrieve only productId and review from the list");
             Console.WriteLine("Enter Option");
             int option = Convert.ToInt32(Console.ReadLine());
             //Creating a list for Product Review
@@ -56,6 +57,9 @@
                     break;
                 case 4:
                     Management.CountByReview(list);
+                    break;
+                case 5:
+                    Management.GetParticularFields(list);
                     break;
             }
         }

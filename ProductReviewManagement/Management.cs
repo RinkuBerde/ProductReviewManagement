@@ -49,5 +49,16 @@ namespace ProductReviewManagement
                 }
             }
         }
+        // UC-05----> Retrieve only productId and review from the list
+        public static void GetParticularFields(List<ProductReview> productReviews)
+        {
+            var query = from products in productReviews
+                        select (products.ProductID, products.Review);
+
+            foreach (var item in query)
+            {
+                Console.WriteLine($"Product ID: {item.ProductID} Review: {item.Review}");
+            }
+        }
     }
 }
